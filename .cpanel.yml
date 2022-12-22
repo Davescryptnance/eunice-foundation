@@ -1,0 +1,26 @@
+---
+# specify the version of cPanel that you are using
+version: 2
+
+# define the branches that should be deployed
+branches:
+  only:
+  - master
+
+# specify the commands that should be run to build and test the application
+build:
+  commands:
+  - composer install
+  - php artisan key:generate
+  - npm install
+  - npm run production
+  - php artisan migrate
+
+# specify any environment variables that should be set during deployment
+environment:
+  APP_ENV: production
+  APP_DEBUG: false
+  APP_KEY: <your app key>
+
+# specify the commands that should be run to start the application
+start: php artisan serve --port=8080 --host=0.0.0.0
