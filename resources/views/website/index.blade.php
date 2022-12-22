@@ -163,7 +163,7 @@
                         <p>{{$testimonial->content}}</p>
                         <div class="testi-footer">
                             <!-- <img src="{{Storage::url($testimonial->image)}}" alt="profile"> -->
-                           <img src=" {{ asset('img/' . $testimonial->image) }}" />
+                           <img src=" {{ asset('website/img/' . $testimonial->image) }}" />
                            
                             <h4>{{$testimonial->name}} <span>{{$testimonial->title}}</span></h4>
                         </div>
